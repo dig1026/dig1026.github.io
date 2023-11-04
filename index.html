@@ -95,23 +95,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="一-搭建"><a href="#一-搭建" class="headerlink" title="一.搭建"></a>一.搭建</h1><p>​    下载<a target="_blank" rel="noopener" href="http://nodejs.cn/">node</a></p>
-<p>​    下载<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a></p>
-<p>​    安装完后通过cmd（win+r再输入cmd)检查是否安装成功</p>
-<p>​        附：Node版本命令：node -v</p>
+        <p>参照csdn中的方法搭建了博客，中途很多都卡住了，整理一遍思路</p>
+<p>[TOC]</p>
+<h1 id="一-搭建"><a href="#一-搭建" class="headerlink" title="一.搭建"></a>一.搭建</h1><h2 id="下载node"><a href="#下载node" class="headerlink" title="下载node"></a>下载<a target="_blank" rel="noopener" href="http://nodejs.cn/">node</a></h2><h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a></h2><h3 id="安装完后通过cmd（win-r再输入cmd-检查是否安装成功"><a href="#安装完后通过cmd（win-r再输入cmd-检查是否安装成功" class="headerlink" title="安装完后通过cmd（win+r再输入cmd)检查是否安装成功"></a>安装完后通过cmd（win+r再输入cmd)检查是否安装成功</h3><p>​        附：Node版本命令：node -v</p>
 <p>​                Git版本命令：git –version</p>
-<p><img src="D:\blog.deploy_git\1.png"></p>
+<p><img src="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231104141244.png"></p>
 <p>​          以上是成功安装的示例</p>
 <p>​       (如果出现安装错误需要考虑系统文件是否有缺失，最直接的方法是重装系统（）一般不推荐，因为使用的是新电脑没有重要文件就换硬盘顺便重装了)</p>
-<h1 id="二-注册github账号创建仓库"><a href="#二-注册github账号创建仓库" class="headerlink" title="二.注册github账号创建仓库"></a>二.注册github账号创建仓库</h1><p>​     注册账号<a target="_blank" rel="noopener" href="https://github.com/">github</a></p>
-<p>​           点击右上角sign in开始注册!()</p>
+<h1 id="二-注册github账号创建仓库"><a href="#二-注册github账号创建仓库" class="headerlink" title="二.注册github账号创建仓库"></a>二.注册github账号创建仓库</h1><h2 id="注册账号github"><a href="#注册账号github" class="headerlink" title="注册账号github"></a>注册账号<a target="_blank" rel="noopener" href="https://github.com/">github</a></h2><p>​           点击右上角sign in开始注册</p>
 <p>​        （成功后邮箱会收到信件）</p>
-<p>​    创建仓库</p>
-<p>​          点击左边绿色键“creaye repository”</p>
-<p><img src="D:\blog.deploy_git\2.png"></p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>​          点击左边绿色键“creaye repository”</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-04%20143116.png"></p>
 <p>​          注意选择public</p>
 <p>​          格式为：用户名.github.io（推荐写注册时的用户名）</p>
-<p><img src="D:\blog.deploy_git\3.png"></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-04%20142300.png"></p>
 <p>​           生成仓库地址，推荐使用ssh</p>
 <h1 id="三-安装hexo"><a href="#三-安装hexo" class="headerlink" title="三.安装hexo"></a>三.安装hexo</h1><p>​         磁盘中创建一个用于存放的文件夹（名字自定义，为方便之后寻找可写blog)</p>
 <p>​         选中文件夹右击打开git bush here</p>
@@ -125,13 +122,13 @@
 <h1 id="四-设置ssh"><a href="#四-设置ssh" class="headerlink" title="四.设置ssh"></a>四.设置ssh</h1><p>​      git中输入命令：cd~&#x2F;.ssh</p>
 <p>​              输入命令：ssh-keygen -t rsa -C’注册时的邮箱地址’</p>
 <p>​       去c盘中（C：\用户\用户名目录）用记事本打开id_rsa.put文件（不要双击——）</p>
-<p><img src="D:\blog.deploy_git\4.png"></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-04%20144446.png"></p>
 <p>​       里面的内容全部复制</p>
 <p>​     在GitHub主页头像下点击settings（设置）</p>
 <p>​     点击SSH and GDG keys，点击New SSH key（右边第一个绿色键）</p>
 <p>​     将复制的内容输入下格里面，名字可随意取</p>
 <p>​     验证：</p>
-<p>​            输入命令：ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>并输入yes，行末会显示出用户名（邮箱也会有提醒）</p>
+<p>​            输入命令：ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a>并输入yes，行末会显示出用户名（邮箱也会有提醒）</p>
 <p>​     绑定用户名和邮箱</p>
 <p>​            输入命令:git config –global user.name “注册时的用户名”</p>
 <p>​            输入命令:git config –global user.email “注册时的邮箱”</p>
@@ -144,8 +141,7 @@
     branch: main
 </code></pre>
 <p>​       输入命令：cnpm install hexo-deployer-git安装上传工具</p>
-<p>​     新建文章：（什么都不编辑会有一个hello world，可以先不写）</p>
-<p>​        输入命令：hexo new”文章名称”会给出文章所在位置，点击即可使用编辑器编辑（需下载编辑器，可用typora）</p>
+<h3 id="新建文章：（什么都不编辑会有一个hello-world，可以先不写）"><a href="#新建文章：（什么都不编辑会有一个hello-world，可以先不写）" class="headerlink" title="新建文章：（什么都不编辑会有一个hello world，可以先不写）"></a>新建文章：（什么都不编辑会有一个hello world，可以先不写）</h3><p>​        输入命令：hexo new”文章名称”会给出文章所在位置，点击即可使用编辑器编辑（需下载编辑器，可用typora）</p>
 <p>​        输入命令：hexo s浏览</p>
 <p>​        输入命令：hexo g生成文件</p>
 <p>​        输入命令：heso d部署到github</p>
@@ -155,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/04/the-way-to-build-blog/" data-id="clojpddvs0000jcdg27vj2syb" data-title="the way to build blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/11/04/the-way-to-build-blog/" data-id="clojrxs6h0001uodg2bd81xsr" data-title="the way to build blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -206,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/01/hello-world/" data-id="clofs9mq70000ocdg5skegjpe" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/11/01/hello-world/" data-id="clojrxs5r0000uodg1qwgfmba" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
